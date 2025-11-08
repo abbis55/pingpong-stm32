@@ -1,0 +1,9 @@
+../Core/Src/pingpong_functions.c:19:6:All_leds_off	1
+../Core/Src/pingpong_functions.c:31:6:Led_on	18
+../Core/Src/pingpong_functions.c:94:6:Led_off	9
+../Core/Src/pingpong_functions.c:112:9:L_button_pressed	2
+../Core/Src/pingpong_functions.c:120:9:R_button_pressed	2
+../Core/Src/pingpong_functions.c:126:13:led_write	9
+../Core/Src/pingpong_functions.c:149:6:Show_points	9
+../Core/Src/pingpong_functions.c:180:6:L_hit	1
+../Core/Src/pingpong_functions.c:185:6:R_hit	1
