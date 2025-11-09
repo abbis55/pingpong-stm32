@@ -1,1 +1,2 @@
-../Core/Src/pingpong.c:10:6:Pingpong	1
+../Core/Src/pingpong.c:29:13:wait_ms_and_check_press	5
+../Core/Src/pingpong.c:42:6:Pingpong	26

@@ -36,7 +36,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define RUN_TEST_PROGRAM
+#undef RUN_TEST_PROGRAM
 #define USE_INTERRUPT_BUTTONS
 /* USER CODE END PD */
 
@@ -60,6 +60,7 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 #ifdef RUN_TEST_PROGRAM
+
 extern void initialise_monitor_handles(void);
 #endif
 /* USER CODE END 0 */
