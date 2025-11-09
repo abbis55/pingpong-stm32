@@ -11,7 +11,11 @@
 
 #include "Pingpong.h"   // bör i sin tur inkludera "main.h"
 #include "pingpong_functions.h"
-
+#include <stdbool.h>
+#include "main.h"      // <-- ger L_button_Pin, L_button_GPIO_Port etc.
+#include <stdbool.h>
+extern volatile bool L_flag;
+extern volatile bool R_flag;
 
 /**
  * @brief Släck alla åtta LED.
@@ -106,21 +110,21 @@ void Led_off(uint8_t lednr)
     }
 }
 
-/**
- * @brief Läs vänster knapp (aktiv låg: tryckt = 1).
- */
-uint8_t L_button_pressed(void)
-{
-    return (HAL_GPIO_ReadPin(L_button_GPIO_Port, L_button_Pin) == GPIO_PIN_RESET) ? 1u : 0u;
-}
-
-/**
- * @brief Läs höger knapp (aktiv låg: tryckt = 1).
- */
-uint8_t R_button_pressed(void)
-{
-    return (HAL_GPIO_ReadPin(R_button_GPIO_Port, R_button_Pin) == GPIO_PIN_RESET) ? 1u : 0u;
-}
+///**
+// * @brief Läs vänster knapp (aktiv låg: tryckt = 1).
+// */
+//uint8_t L_button_pressed(void)
+//{
+//    return (HAL_GPIO_ReadPin(L_button_GPIO_Port, L_button_Pin) == GPIO_PIN_RESET) ? 1u : 0u;
+//}
+//
+///**
+// * @brief Läs höger knapp (aktiv låg: tryckt = 1).
+// */
+//uint8_t R_button_pressed(void)
+//{
+//    return (HAL_GPIO_ReadPin(R_button_GPIO_Port, R_button_Pin) == GPIO_PIN_RESET) ? 1u : 0u;
+//}
 
 // Hjälpare: skriv till valfri LED 1..8 (SET/RESET)
 static void led_write(uint8_t idx, GPIO_PinState s)
@@ -177,17 +181,35 @@ void Show_points(uint8_t L_points, uint8_t R_points)
 
 
 // Aktiv låg: tryckt = 0V = GPIO_PIN_RESET
+//bool L_hit(void)
+//{
+//    return (HAL_GPIO_ReadPin(L_button_GPIO_Port, L_button_Pin) == GPIO_PIN_RESET);
+//}
+//
+//bool R_hit(void)
+//{
+//    return (HAL_GPIO_ReadPin(R_button_GPIO_Port, R_button_Pin) == GPIO_PIN_RESET);
+//}
+
+
+//interrupt
 bool L_hit(void)
 {
+#ifdef USE_INTERRUPT_BUTTONS
+    if (L_flag) { L_flag = false; return true; }
+    return false;
+#else
     return (HAL_GPIO_ReadPin(L_button_GPIO_Port, L_button_Pin) == GPIO_PIN_RESET);
+#endif
 }
 
 bool R_hit(void)
 {
+#ifdef USE_INTERRUPT_BUTTONS
+    if (R_flag) { R_flag = false; return true; }
+    return false;
+#else
     return (HAL_GPIO_ReadPin(R_button_GPIO_Port, R_button_Pin) == GPIO_PIN_RESET);
+#endif
 }
-
-
-
-
 

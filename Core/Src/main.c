@@ -20,10 +20,8 @@
 #include "main.h"
 #include "usart.h"
 #include "gpio.h"
-#include "Pingpong.h"
-#include "Test.h"
-#include "pingpong_functions.h"
 #include "clock.h"
+#include "Test.h"
 
 
 /* Private includes ----------------------------------------------------------*/
@@ -39,6 +37,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define RUN_TEST_PROGRAM
+#define USE_INTERRUPT_BUTTONS
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -53,7 +52,7 @@
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
-//void SystemClock_Config(void);
+void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */

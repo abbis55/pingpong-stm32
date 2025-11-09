@@ -9,6 +9,9 @@
 #define INC_CLOCK_H_
 
 #include "main.h"
+#pragma once
+void SystemClock_Config(void);
+
 
 /** Init system clock (flyttad från main.c) */
 void SystemClock_Config(void);

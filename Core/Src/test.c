@@ -1,6 +1,8 @@
 #include "Test.h"
 #include "pingpong_functions.h"
 
+static void Test_buttons(void);   // <-- prototyp före Test_program
+
 //void Test_program(void)
 //{
 //    Test_Led();        // prototypen finns i Test.h → inga “implicit” varningar

@@ -1,9 +1,7 @@
-../Core/Src/pingpong_functions.c:19:6:All_leds_off	8	static
-../Core/Src/pingpong_functions.c:31:6:Led_on	24	static
-../Core/Src/pingpong_functions.c:94:6:Led_off	16	static
-../Core/Src/pingpong_functions.c:112:9:L_button_pressed	8	static
-../Core/Src/pingpong_functions.c:120:9:R_button_pressed	8	static
-../Core/Src/pingpong_functions.c:126:13:led_write	16	static
-../Core/Src/pingpong_functions.c:149:6:Show_points	24	static
-../Core/Src/pingpong_functions.c:180:6:L_hit	8	static
-../Core/Src/pingpong_functions.c:185:6:R_hit	8	static
+../Core/Src/pingpong_functions.c:23:6:All_leds_off	8	static
+../Core/Src/pingpong_functions.c:35:6:Led_on	24	static
+../Core/Src/pingpong_functions.c:98:6:Led_off	16	static
+../Core/Src/pingpong_functions.c:130:13:led_write	16	static
+../Core/Src/pingpong_functions.c:153:6:Show_points	24	static
+../Core/Src/pingpong_functions.c:196:6:L_hit	8	static
+../Core/Src/pingpong_functions.c:206:6:R_hit	8	static
